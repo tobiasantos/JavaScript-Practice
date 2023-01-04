@@ -28,7 +28,14 @@ Cpf.prototype.createDigit = function (array) {
   }
 };
 
+Cpf.prototype.checkRep = function () {
+  return this.value.charAt(0).repeat(11) === this.value;
+};
+
 Cpf.prototype.checkCPF = function () {
+  if (this.checkRep()) {
+    return false;
+  }
   this.removeLastDigits();
   const numbers1 = this.check.split("");
   let firstDig = this.createDigit(numbers1);
