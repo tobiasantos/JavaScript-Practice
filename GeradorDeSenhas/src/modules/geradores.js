@@ -6,8 +6,6 @@ const symbols = ",.;~^[{]}!@#$%&*()-=+`><?/";
 const createSymbol = () => symbols[rand(0, symbols.length - 1)];
 
 export default function createPassword(qtd, upper, lower, number, symbol) {
-  const shuffle = (array) => {};
-
   const passwordArray = [];
   qtd = Number(qtd);
 
@@ -18,6 +16,5 @@ export default function createPassword(qtd, upper, lower, number, symbol) {
     symbol && passwordArray.push(createSymbol());
   }
   passwordArray.sort(() => 0.5 - Math.random());
-  //return passwordArray.sort().join("").slice(0, qtd);
   return passwordArray.join("").slice(0, qtd);
 }
